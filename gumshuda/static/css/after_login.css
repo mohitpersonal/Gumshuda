@@ -1,0 +1,38 @@
+.form-control.has-error {
+    border: 1px solid #FB404B;
+    color: #FB404B;
+}
+
+.form-control.has-success {
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+
+.error-msg {
+    color: red;
+    font-size: 13px;
+    margin: 3px;
+}
+
+.alert.alert-success {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    padding-left: 194px;
+}
+
+
+
+
+.alert.alert-danger {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    padding-left: 194px;
+}
+
+
+button.swal-button.swal-button--cancel {
+    margin-right: 226px;
+}

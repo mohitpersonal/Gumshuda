@@ -1,0 +1,232 @@
+.error-msg {
+    color: red;
+    font-size: 13px;
+    margin: 3px;
+}
+
+.messages li {
+    color: green;
+    font-weight: 600;
+}
+
+.msg_error_class li {
+    color: red;
+    font-weight: 400;
+}
+
+.star_text {
+    color: red;
+    font-weight: 500;
+    margin-left: 2px;
+    font-size: 13px;
+}
+
+.login-msg {
+    background: #fff;
+    border: 0px solid #c6c2c2;
+    box-shadow: 1px 1px 8px rgb(137, 141, 147);
+    border-radius: 6px;
+    padding: 8px;
+    width: 100%;
+    min-width: 400px;
+}
+
+.login-msg p {
+    margin-bottom: 0px;
+}
+
+.login-page .form-group {
+    position: relative;
+}
+
+.form-group .form-control ~ .zmdi-eye {
+    position: absolute;
+    right: 0;
+    top: 26px;
+    cursor: pointer;
+    height: 38px;
+    opacity: 0.8;
+    padding: 8px 6px 8px 4px;
+}
+
+.form-group.col-md-6 .form-control ~ .zmdi-eye {
+    right: 15px;
+}
+
+ul.messages,
+ul.msg_error_class {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+
+@media (min-width: 576px) {
+
+    .alert-popup .modal-dialog {
+        max-width: 420px;
+        margin: 1.75rem auto;
+    }
+
+}
+
+
+body {
+    background: #fff;
+    font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+}
+
+.post_code #idpc_input {
+    width: 75%;
+    float: left;
+    height: 40px !important;
+    margin-bottom: 10px !important;
+
+}
+
+.post_code #idpc_button {
+    margin-left: 5px;
+    height: 40px;
+    margin-bottom: 10px !important;
+    width: 23%;
+}
+
+.post_code #idpc_dropdown {
+    height: 40px;
+}
+
+
+.table-responsive {
+    overflow: auto !important;
+}
+
+.tab-content.registration-tab-content h4 {
+    margin-top: 0px;
+    font-size: 20px;
+    color: #22226a;
+}
+
+/*.content ul li.active a {
+    color: #000000;
+}
+.content ul li a {
+    color: #adacac;
+}*/
+.back-btn {
+    border: none;
+    background: #ddd;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #000 !important;
+}
+
+form#signup_form .card {
+    min-height: 460px;
+}
+
+.next-btn {
+    background: #00005a;
+    border: none;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.regis-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: center;
+}
+
+
+/*******12sep*******/
+
+.content.account {
+    padding: 0;
+}
+
+.account .tab-content.registration-tab-content {
+    padding: 20px;
+}
+
+.account ul.nav.nav-tabs {
+    text-align: center;
+    background-color: #9A9A9A;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: 0;
+}
+
+
+.account .nav-tabs > li.active > a, .account .nav-tabs > li.active > a:focus, .account .nav-tabs > li.active > a:hover {
+    color: #fff !important;
+    cursor: default;
+    background-color: #23CCEF !important;
+    border: 0px !important;
+    border-bottom-color: transparent;
+    margin: 0px !important;
+    border-radius: 0px !important;
+}
+
+.has-error {
+    border: 1px solid #FB404B;
+    color: #FB404B;
+}
+
+.has-success {
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+.account ul.nav.nav-tabs {
+    text-align: center;
+    background-color: #9A9A9A;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: 0;
+    display: flex;
+}
+
+.account ul.nav.nav-tabs li.nav-item {
+    flex: 1;
+}
+
+.account ul.nav.nav-tabs li.nav-item a {
+    padding: 10px 0 !important;
+    margin: 0 auto !important;
+    border-radius: 0 !important;
+    border: none !important;
+    color: #fff;
+}
+
+.has-error {
+    border: 1px solid #FB404B;
+    color: #FB404B;
+}
+
+.has-success {
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+.form-control.has-error {
+    border: 1px solid #FB404B !important;
+    color: #FB404B !important;
+}
+
+.form-control.has-success {
+    border: 1px solid #28a745 !important;
+    color: #28a745 !important;
+}
+
+#signup-form .remeber_txt {
+    display: flex;
+}
+
+#signup-form .remeber_txt input[type=checkbox] {
+    margin-right: 4px;
+}

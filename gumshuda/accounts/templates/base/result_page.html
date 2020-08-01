@@ -1,0 +1,152 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+{% block title %}
+<title>GUMSHUDA | Result Match Person</title>
+{% endblock %}
+         {% block content %}
+<style type="text/css">
+	img.img-fluid {
+    height: 164px;
+    width: 213px;
+}
+</style>
+<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3">Profile of Matched Person</h1>
+
+					<div class="row">
+						<div class="col-md-4 col-xl-3">
+							<div class="card mb-3">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Missing Person's Pic</h5>
+								</div>
+								<div class="card-body text-center">
+									<img src="/media/{{missing_person_obj.missing_person_image}}" alt="Stacie Hall" class="img-fluid" width="128" height="128"  />
+									
+
+									<div>
+									</div>
+								</div>
+								
+								</div>
+							</div>
+							
+
+						<div class="col-md-8 col-xl-9">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<div class="dropdown show">
+										</div>
+									</div>
+								</div>
+								<div class="card-body h-100">
+
+									<div class="media">
+										
+										<div class="media-body">
+											
+											<strong>Missing Person Name -: {{missing_person_obj.name}}</strong><br />
+											<small class="text-muted">{{missing_person_obj.created_on|date:'y:m:d'}}</small><br />
+
+										</div>
+									</div>
+
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+											
+											<strong>Age -:</strong> <strong> {{missing_person_obj.age}}</strong><br />
+											
+
+											
+										</div>
+									</div>
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+											
+											<strong>Gender -:</strong> <strong> {{missing_person_obj.gender}}</strong><br />
+											
+
+											
+										</div>
+									</div>
+									
+
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+											
+											<strong>Contact -:</strong> <strong> {{missing_person_obj.contact}}</strong><br />
+											
+
+											
+										</div>
+									</div>
+								<hr />
+									<div class="media">
+										
+										<div class="media-body">
+										<strong>Country -:</strong> <strong> {{missing_person_obj.country}}</strong><br />
+											
+										</div>
+									</div>
+									<hr />
+										<div class="media">
+										
+										<div class="media-body">
+										<strong>Status -:</strong> {% if missing_person_obj.is_in_found == True %}<strong>Active </strong>
+										{% else %}
+										<strong>Inactive </strong>
+										{% endif %}
+										<br />
+											
+										</div>
+									</div>
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+										<strong>City -:</strong> <strong> {{missing_person_obj.is_in_found}}</strong><br />
+											
+										</div>
+									</div>
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+										<strong>Street -:</strong> <strong> {{missing_person_obj.street}}</strong><br />
+											
+										</div>
+									</div>
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+										<strong>Address -:</strong> <strong> {{missing_person_obj.address}}</strong><br />
+											
+										</div>
+									</div>
+									<hr />
+									<div class="media">
+										
+										<div class="media-body">
+										<strong>Province -:</strong> <strong> {{missing_person_obj.province}}</strong><br />
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</main>
+
+			{% endblock %}

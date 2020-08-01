@@ -1,0 +1,153 @@
+{% load static %}
+{% load title %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+      <meta name="author" content="Bootlab">
+      <title>Gumshuda | Missing Person</title>
+      <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
+      <!-- PICK ONE OF THE STYLES BELOW -->
+      <link href="{% static 'css/after_login.css' %}" rel="stylesheet"/>
+      <link href="{% static 'css/classic.css' %}" rel="stylesheet">
+      <!-- <link href="css/corporate.css" rel="stylesheet"> -->
+      <!-- <link href="css/modern.css" rel="stylesheet"> -->
+      <!-- BEGIN SETTINGS -->
+      <!-- You can remove this after picking a style -->
+      <style>
+         body {
+         opacity: 0;
+         }
+      </style>
+      <script src="{% static 'js/settings.js' %}"></script>
+      <!-- END SETTINGS -->
+   </head>
+   <body>
+      <div class="wrapper">
+         <nav class="sidebar">
+            <div class="sidebar-content ">
+               <a class="sidebar-brand" href=".">
+               <i class="align-middle" data-feather="box"></i>
+               <span class="align-middle">Gumshuda</span>
+               </a>
+               <ul class="sidebar-nav">
+                  <li class="sidebar-header">
+                     Main
+                  </li>
+   
+                  <li {% if request.resolver_match.url_name == 'MissingPersonView' %} class="sidebar-item active" {% else %} class="sidebar-item" {% endif %}><a class="sidebar-link" href="{% url 'MissingPersonView' %}"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Missing Person</span></a></li>
+                  <li {% if request.resolver_match.url_name == 'FoundPersonView' %} class="sidebar-item active" {% else %} class="sidebar-item" {% endif %}><a class="sidebar-link" href="{% url 'FoundPersonView' %}"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Found Person</span></a></li>
+
+                  <li {% if request.resolver_match.url_name == 'MyEnteries' %} class="sidebar-item active" {% else %} class="sidebar-item" {% endif %}><a class="sidebar-link" href="{% url 'MyEnteries' %}"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">My Entries</span></a></li>
+                  <li {% if request.resolver_match.url_name == 'DetectPerson' %} class="sidebar-item active" {% else %} class="sidebar-item" {% endif %}><a class="sidebar-link" href="{% url 'DetectPerson' %}"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Detect Person</span></a></li>
+
+
+                 
+               </ul>
+             <!--   <div class="sidebar-bottom d-none d-lg-block">
+                  <div class="media">
+                     
+                     <div class="media-body">
+                        <div>
+                           <i class="fas fa-circle text-success"></i> Online
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
+            </div>
+         </nav>
+         <div class="main">
+            <nav class="navbar navbar-expand navbar-light bg-white">
+               <a class="sidebar-toggle d-flex mr-2">
+               <i class="hamburger align-self-center"></i>
+               </a>
+               <form class="form-inline d-none d-sm-inline-block">
+                  <input class="form-control form-control-no-border mr-sm-2" type="text" placeholder="Search projects..." aria-label="Search">
+               </form>
+               <div class="navbar-collapse collapse">
+                  <ul class="navbar-nav ml-auto">
+                  
+                
+                     <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                        <i class="align-middle" data-feather="settings"></i>
+                        </a>
+                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                        <span class="text-dark">{{request.user.first_name|get_req}} {{request.user.last_name | get_req}}</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                           <a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
+                           
+                           <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="{% url 'MatchedRecord' %}">Matched Records</a>
+                           <a class="dropdown-item" id="sign_out_sweet">Sign out</a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+            {% block content %}
+           {% endblock %} 
+
+
+            <footer class="footer">
+               <div class="container-fluid">
+                  <div class="row text-muted">
+                    <!--  <div class="col-6 text-left">
+                        <ul class="list-inline">
+                           <li class="list-inline-item">
+                              <a class="text-muted" href="#">Support</a>
+                           </li>
+                           <li class="list-inline-item">
+                              <a class="text-muted" href="#">Help Center</a>
+                           </li>
+                           <li class="list-inline-item">
+                              <a class="text-muted" href="#">Privacy</a>
+                           </li>
+                           <li class="list-inline-item">
+                              <a class="text-muted" href="#">Terms of Service</a>
+                           </li>
+                        </ul>
+                     </div> -->
+                     <div class="col-6 text-right">
+                        <p class="mb-0"> 2020 - <a href="gumshuda.com" class="text-muted">GUMSHUDA</a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </div>
+      <script src="{% static 'js/app.js' %}"></script>
+      <script src="{% static 'js/sweetalert.min.js' %}"></script>
+      <script src="{% static 'js/missing_person.js' %}"></script>
+      
+
+      <script>
+      $(function() {
+         // Datatables basic
+         $("#datatables-basic").DataTable({
+            responsive: true
+         });
+         // Datatables with Buttons
+         var datatablesButtons = $("#datatables-buttons").DataTable({
+            responsive: true,
+            lengthChange: !1,
+            buttons: ["copy", "print"]
+         });
+         datatablesButtons.buttons().container().appendTo("#datatables-buttons_wrapper .col-md-6:eq(0)");
+         // Datatables with Multiselect
+         var datatablesMulti = $("#datatables-multi").DataTable({
+            responsive: true,
+            select: {
+               style: "multi"
+            }
+         });
+      });
+   </script>
+
+   </body>
+</html>

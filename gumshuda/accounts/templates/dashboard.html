@@ -1,0 +1,161 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+         {% block content %}
+         <main class="content">
+				<div class="container-fluid p-0">
+					<h1 class="h3 mb-3">Found Person Listing</h1>
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Listing</h5>
+									
+								</div>
+								<div class="card-body">
+									<table id="datatables-multi-ist" class="table table-striped" style="width:100%">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Age</th>
+												<th>City</th>
+												<th>Gender</th>
+												<th>Founder Person Contact </th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for one_found in found_entry %}
+											<tr>
+												<td>{{one_found.name}}</td>
+												<td>{{one_found.age}}</td>
+												<td>{{one_found.city}}</td>
+												<td>{{one_found.gender}}</td>
+												<td>{{one_found.founder_person_contact}}</td>
+												<td>
+											
+											<a href="/accounts/view_found/?found_id_view={{one_found.id}}"><i class="align-middle mr-2 " data-feather="eye"></i> </a>
+											<a href="#" class="delete_ist_table" data-id = {{one_found.id}}>
+											<i class="align-middle mr-2 " style="cursor: pointer;" data-feather="trash" ></i></a>
+										</div></td>
+											</tr>
+											{% endfor %}
+						
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Missing Person Enteries</h5>
+									
+								</div>
+								<div class="card-body">
+									<table id="datatables-multi" class="table table-striped" style="width:100%">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Age</th>
+												<th>City</th>
+												<th>Gender</th>
+												<th>Contact </th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for one_found in all_missing_entry %}
+											<tr>
+												<td>{{one_found.name}}</td>
+												<td>{{one_found.age}}</td>
+												<td>{{one_found.city}}</td>
+												<td>{{one_found.gender}}</td>
+												<td>{{one_found.contact}}</td>
+												<td><a href="/accounts/view_missing/?view_missing_id={{one_found.id}}"><i class="align-middle mr-2 " data-feather="eye"></i></a> 
+										<a href="#" class="delete_sec_table" data-id = {{one_found.id}}>
+											<i class="align-middle mr-2 delete_sec_table" style="cursor: pointer;" data-feather="trash"></i></a></td>
+											</tr>
+											{% endfor %}
+						
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div></div>
+
+				</div>
+			</main>
+			<script src="{% static 'js/sweetalert.min.js' %}"></script>
+
+
+            <script type="text/javascript">
+  
+   $('.delete_ist_table').click(function(){
+      var ids = $(this).attr('data-id');
+      console.log("id is ----->", ids)
+      swal({
+   
+         title : "Confirmation",
+         text : "Are you sure you want to delete ?",
+         buttons : {
+            cancel : true,
+            confirm : "Confirm"
+         }
+   
+   
+      }).then(val =>{
+         
+         if (val){
+         	var url = "/accounts/delete_found/?ids=" + ids ;
+
+            window.location.href = url
+            swal({
+               title : "Thanks !",
+               text : "You have Sucessfully Delete Your Post",
+               icon : "success"
+   
+            })
+         }
+      })
+
+   })
+
+
+   //
+    $('.delete_sec_table').click(function(){
+      var ids = $(this).attr('data-id');
+      console.log("id is ----->", ids)
+      swal({
+   
+         title : "Confirmation",
+         text : "Are you sure you want to delete ?",
+         buttons : {
+            cancel : true,
+            confirm : "Confirm"
+         }
+   
+   
+      }).then(val =>{
+         
+         if (val){
+         	var url = "/accounts/delete_missing/?missing_id=" + ids ;
+
+            window.location.href = url
+            swal({
+               title : "Thanks !",
+               text : "You have Sucessfully Delete Your Record",
+               icon : "success"
+   
+            })
+         }
+      })
+
+   })
+            </script>
+            {% endblock %}
+            
+         

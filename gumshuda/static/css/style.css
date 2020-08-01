@@ -1,0 +1,126 @@
+@media (min-width: 992px) {
+    .typo-line {
+        padding-left: 140px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .typo-line .category {
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0px;
+        position: absolute;
+    }
+}
+
+.all-icons [class^="pe-"] {
+    font-size: 40px;
+}
+
+.all-icons input {
+    border: 0;
+}
+
+.all-icons .font-icon-detail {
+    text-align: center;
+    padding: 45px 0px 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.all-icons .font-icon-container a {
+    padding: 5px 0;
+    display: block;
+    color: #666666;
+}
+
+.all-icons .font-icon-detail input {
+    margin: 25px auto 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.all-icons h5 {
+    margin-top: 60px;
+}
+
+.all-icons > div > .row:first-child h5 {
+    margin-top: 15px;
+}
+
+.places-buttons .btn {
+    margin-bottom: 30px
+}
+
+.buttons-with-margin .btn {
+    margin-bottom: 5px;
+}
+
+
+.animated .img-rounded {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: block;
+}
+
+.animated .img-rounded img {
+    width: 100%;
+}
+
+/* New Login  */
+.full-page[data-color="orange"]:after {
+    background: #00005a;
+    background: -moz-linear-gradient(top, #9368E9 0%, #943bea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00005a), color-stop(100%, #00005a));
+    background: -webkit-linear-gradient(top, #00005a 0%, #00005a 100%);
+    background: -o-linear-gradient(top, #9368E9 0%, #943bea 100%);
+    background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
+    background: linear-gradient(to bottom, #00005a 0%, #00005a 100%);
+    opacity: .8;
+}
+
+.navbar.navbar-absolute .navbar-brand > img {
+    display: block;
+    max-height: 48px;
+    margin-top: -14px;
+}
+
+.login-page .card .header {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-weight: 500;
+    color: #00005a;
+    position: relative;
+}
+
+/*
+.login-page .card .header:after{
+       content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 86px;
+    height: 1px;
+    background: #00005a;
+    margin: auto;
+    bottom: 14px;
+}*/
+.btn-warning.btn-fill {
+    background-color: #00005a;
+    border-color: #00005a;
+}
+
+.btn-warning.btn-fill:hover,
+.btn-warning.btn-fill:focus {
+    background-color: #00005a;
+    border-color: #00005a;
+    opacity: 0.8;
+}
+
+
